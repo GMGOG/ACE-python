@@ -1,0 +1,55 @@
+English = {}
+Maths = {}
+History = {}
+Science = {}
+q="e"
+while(q!="Exit"):
+    print("Press Y if you want to enter a record of a Student:")
+    print("Press M for Highest Marks Subjectwise:")
+    print("Press P for Percentage of a student:")
+    y=input()
+    if(y=='Y'):
+        print("*All in lower case*")
+        while(y=='Y'):
+            print("Enter the Name of the Student")
+            Name=input()
+            print("******Enter Marks******")
+            print("English:")
+            v=input()
+            English[Name]=v
+            print("Maths:")
+            v=input()
+            Maths[Name]=v
+            print("History:")
+            v=input()
+            History[Name]=v
+            print("Science:")
+            v=input()
+            Science[Name]=v
+            print("For more press Y")
+            y=input()
+    elif(y=='M'):
+        print("Maximum marks in English:")
+        for x in English:
+            if(English[x]==English[max(English)]):
+                print(English[x],"of",x)
+        print("Maximum marks in Maths:")
+        for x in Maths:
+            if(Maths[x]==Maths[max(Maths)]):
+                print(Maths[x],"of",x)
+        print("Maximum marks in History:")
+        for x in History:
+            if(History[x]==History[max(History)]):
+                print(History[x],"of",x)
+        print("Maximum marks in Science:")
+        for x in History:
+            if(Science[x]==Science[max(Science)]):
+                print(Science[x],"of",x)
+    elif(y=='P'):
+        print("Enter the Name of the Student:\n(All in lower case)")
+        print(English.keys())
+        Name=input()
+        Per=(English[Name]+Maths[Name]+History[Name]+Science[Name])/4
+        print("Percentage is: ",Per)
+    print("Type:\"Exit\" if you want to quit.")
+    q=input()
